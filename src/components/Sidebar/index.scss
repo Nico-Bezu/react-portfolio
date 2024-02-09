@@ -1,6 +1,6 @@
 .nav-bar {
     background: #181818;
-    width: 60px;
+    width: 70px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -14,11 +14,11 @@
     img {
         display: block;
         margin: 8px auto;
-        width: 24px;
+        width: 54px;
         height: auto;
 
         &.sub-logo {
-            width: 80px;
+            width: 60px;
             }
         }
     }
@@ -28,7 +28,7 @@
         position: center;
         height: 210px;
         top: 50%;
-        margin-top: -120px;
+        margin-top: 220px;
         width: 100%;
 
         a {
@@ -41,54 +41,59 @@
             text-decoration: none;
         
             i {
-                transition: all .03s ease-out;
-            }
-
-            &:hover {
+                transition: all 0.3s ease-out;
+              }
+        
+              &:hover {
                 color: #ffd700;
-                
+        
                 svg {
-                    opacity: 0;
+                  opacity: 0;
                 }
-
+        
                 &:after {
-                    content: '';
-                    font-size: 9px;
-                    letter-spacing: 2px;
-                    position: absolute;
-                    bottom: 0;
-                    display: block;
-                    width: 100%;
-                    text-align: center;
-                    opacity: 0;
-                    transition: all 0.3s ease-out;
-                }  
-
-                &:first-child {
-                    &::after {
-                        content: 'HOME';
-                    }
+                  opacity: 1;
                 }
+              }
+        
+              &:after {
+                content: '';
+                font-size: 9px;
+                letter-spacing: 2px;
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.3s ease-out;
+              }
+        
+              &:first-child {
+                &:after {
+                  content: 'HOME';
+                }
+              }
             }
-
+        
             a.about-link {
-                &:after {
-                    content: 'ABOUT';
-                }
+              &:after {
+                content: 'ABOUT';
+              }
             }
-
-            a.about-contact {
-                &:after {
-                    content: 'CONTACT';
-                }
+        
+            a.contact-link {
+              &:after {
+                content: 'CONTACT';
+              }
             }
-
+        
             a.active {
-                svg {
-                    color: #ffd700;
-                }
+              svg {
+                color: #ffd700;
+              }
             }
-        }
+          }
 
 ul {
     position: absolute;
@@ -118,4 +123,3 @@ ul {
 
 
     }
-}
