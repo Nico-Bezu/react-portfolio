@@ -2,8 +2,6 @@ import './index.scss';
 
 
 const Layout = () => {
-    return (
-         <div>Layout</div>
-        )
+    return <>Hello</>
 }
 export default Layout
