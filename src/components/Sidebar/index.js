@@ -1,9 +1,11 @@
-import "./index.scss";
-import LogoN from '../../assets/images/logo-n.jpeg';
-import LogoSubtitle from '../../assets/images/logo-subtitle.png';
-import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import "./index.scss"
+import LogoN from '../../assets/images/logo-n.jpeg'
+import LogoSubtitle from '../../assets/images/logo-subtitle.png'
+import { Link, NavLink } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faUser } from "@fortawesome/free-solid-svg-icons"
+
+
 
 const Sidebar = () => (
     <div className='nav-bar'>
