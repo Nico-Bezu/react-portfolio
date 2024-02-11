@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
+import Logo from './Logo'  
 
 const Home = () => 
 {
@@ -38,6 +39,7 @@ const Home = () =>
                 <h2> Software Engineer / Full Stack Developer </h2>
                 <Link to="/contact" className="flat-button"> CONTACT ME</Link>
             </div>
+            <Logo />
         </div>
     )
 }
