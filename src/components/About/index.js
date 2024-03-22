@@ -1,8 +1,13 @@
+
+import React, { useEffect, useState } from 'react';
+import './index.scss'
+import AnimatedLetters from '../AnimatedLetters'
 import 'index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState } from 'react'
 
-const About = () => {
+
+const About = () => 
+{
     const [letterClass, setLetterClass] = useState('text-animate')
     useEffect(() => {
         const timerId = setTimeout(() => {
@@ -11,6 +16,7 @@ const About = () => {
     
         return () => clearTimeout(timerId);
     }, []);
+
     <div className='container about-page'>
         <div className='text-zone'>
             <h1>
