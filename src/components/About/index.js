@@ -26,7 +26,7 @@ const About = () =>
                 />
             </h1>
             <p>
-            I am an undergraduate student at the University of California, Berkeley, pursuing a degree in Computer Science. I am passionate about this field and am looking for internship opportunities to enhance my abilities as a computer scientist. My academic coursework and projects have equipped me with the skills to have a substantial impact on my team and be a valuable asset to an employer.
+            I am an undergraduate student at Yale University, pursuing a degree in Computer Science and Economics. I am passionate about this field and am looking for internship opportunities to enhance my abilities as a computer scientist. My academic coursework and projects have equipped me with the skills to have a substantial impact on my team and be a valuable asset to an employer.
             </p>
         </div>
     </div>
