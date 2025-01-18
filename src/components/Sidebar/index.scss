@@ -34,7 +34,7 @@
 
     a {
       font-size: 22px;
-      color: #8C8C8C;
+      color: #FFFFFF;
       display: block;
       line-height: 51px;
       height: 51px;
@@ -45,9 +45,12 @@
         transition: all 0.3s ease-out;
       }
 
-      &:hover {
-        color: #FFFFFF;
+      svg {
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+      }
 
+      &:hover {
         svg {
           opacity: 0;
         }
@@ -67,8 +70,8 @@
         width: 100%;
         text-align: center;
         opacity: 0;
-        -webkit-transition: all 0.3s ease-out;
         transition: all 0.3s ease-out;
+        color: #FFFFFF;
       }
 
       &:first-child {
@@ -119,12 +122,22 @@
         display: block;
         font-size: 15px;
         line-height: 16px;
-        color: #4d4d4e;
+        color: #FFFFFF;
+
+        svg {
+          color: #FFFFFF;
+          opacity: 1;
+          transition: opacity 0.3s ease-out;
+        }
+
+        &:hover svg {
+          opacity: 0;
+        }
       }
 
       &:hover {
         .anchor-icon {
-          color: #ffd700;
+          color: #FFFFFF;
         }
       }
     }

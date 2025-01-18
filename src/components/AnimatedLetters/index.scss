@@ -4,23 +4,26 @@
     animation: bounceIn 1s 1s;
     animation-fill-mode: forwards;
     min-width: 10px;
+    
+    &:hover {
+        animation: rubberBand 1s;
+        color: #FFFFFF;
+    }
 }
 
 .text-animate-hover {
     min-width: 10px;
     display: inline-block;
     animation-fill-mode: both;
-  
-    &:hover {
-      animation: rubberBand 1s;
-      color: #00356B;
-      transform: scale(1.05);
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-  }
 
-  @for $i from 1 through 10 {
-    .text-animate._#{$i} {
-      animation-delay: #{$i / 10}s;
+    &:hover {
+        animation: rubberBand 1s;
+        color: #000000;
     }
-  }
+}
+
+@for $i from 1 through 35 {
+    .text-animate._#{$i} {
+        animation-delay: #{$i / 10}s;
+    }
+}
