@@ -2,6 +2,7 @@ import Layout from './components/Layout'
 import { Routes, Route } from 'react-router-dom'
 import './App.scss';
 import Home from './components/Home';
+import About from './components/About';
 
 function App() {
   return (
