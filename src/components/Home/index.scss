@@ -1,17 +1,22 @@
 .home-page {
-
     .text-zone {
         position: absolute;
         left: 10%;
         top: 35%;
-        transform: translateY(-50);
+        transform: translateY(-50%);
         width: 40%;
         max-height: 90%;
         z-index: 1;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     }
 
     h1 {
-        color: #FFFFFF;
+        color: rgba(255, 255, 255, 0.9);
         font-size: 53px;
         margin: 0;
         font-family: 'Coolvetica';
@@ -19,7 +24,7 @@
 
         &::before {
             font-family: 'La Belle Aurore';
-            color: #00356B;
+            color: rgba(255, 255, 255, 0.4);
             font-size: 18px;
             position: absolute;
             margin-top: -40px;
@@ -29,35 +34,28 @@
 
         &::after {
             font-family: 'La Belle Aurore';
-            color: #00356B;
+            color: rgba(255, 255, 255, 0.4);
             font-size: 18px;
             position: absolute;
             margin-top: 18px;
             animation: fadeIn 1s 1.7s backwards;
             opacity: 0.6;
         }
-        img {
-            width: 32px;
-            margin-left: 20px;
-            opacity: 0;
-            height: auto;
-            animation: rotateIn 1st linear both;
-            animation-delay: 1.4s;
-        }
     }
 
     .text-animate-hover {
         &:hover {
-            color: #FFFFFF;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
             transform: scale(1.05);
-            transition: transform 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
             z-index: 2;
         }
     }
 }
 
 h2 {
-    color: #000000;
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 20px;
     font-weight: 400;
     font-size: 11px;
@@ -67,31 +65,27 @@ h2 {
 }
 
 .flat-button {
-    color: #00356B;
-    background: #FFFFFF;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 4px;
     font-family: sans-serif;
     text-decoration: none;
     padding: 10px 18px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
     margin-top: 25px;
     float: left;
     animation: fadeIn 1s 1.8s backwards;
     white-space: nowrap;
-    transition: all 0.3s ease-out;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 
     &:hover {
-        background: #00356B;
-        color: #FFFFFF;
-        border-color: #FFFFFF;
-    }
-
-    &:active, &:focus {
-        color: #00356B;
-        background: #FFFFFF;
-        border-color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        transform: translateY(-2px);
     }
 }
 
@@ -109,6 +103,8 @@ h2 {
         width: 2px;
         height: 2px;
         background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        filter: blur(1px);
         animation: float 20s infinite linear;
 
         @for $i from 1 through 50 {
@@ -136,56 +132,8 @@ h2 {
     }
 }
 
-.tech-stack {
-    position: absolute;
-    bottom: 50px;
-    right: 5%;
-    overflow: hidden;
-    
-    .scroll-container {
-        display: flex;
-        animation: scroll 20s linear infinite;
-        
-        .tech-item {
-            padding: 10px 20px;
-            margin: 0 10px;
-            background: rgba(0, 53, 107, 0.1);
-            border: 1px solid #00356B;
-            border-radius: 20px;
-            color: #FFFFFF;
-            white-space: nowrap;
-        }
-    }
-}
-
-@keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-.trail-dot {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background: #00356B;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s;
-    opacity: 0.6;
-    z-index: 9999;
-
-    @for $i from 1 through 20 {
-        &:nth-child(#{$i}) {
-            width: #{8 - ($i * 0.3)}px;
-            height: #{8 - ($i * 0.3)}px;
-            opacity: #{0.6 - ($i * 0.02)};
-        }
-    }
-}
-
 .tagline {
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.8);
     span {
         display: inline-block;
         opacity: 0;
