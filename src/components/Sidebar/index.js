@@ -2,48 +2,56 @@ import "./index.scss"
 import Logo from '../../assets/images/Logo.png'
 import { Link, NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons"
+import { faHome, faEnvelope, faUser, faBars } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { useState } from 'react'
 
+const Sidebar = () => {
+    const [isOpen, setIsOpen] = useState(false)
 
-
-const Sidebar = () => (
-    <div className='nav-bar'>
-        <Link className = 'logo' to='/'>
-            <img src = {Logo} alt='logo' />
-        </Link>
-        <nav>
-            <NavLink exact ="true" activeclassname ="active" to ="/">
-                <FontAwesomeIcon icon ={faHome} color="#4d4d4e" />
-            </NavLink>
-            <NavLink exact ='true' activeclassname ='active' className='about-link' to ='/about'>
-                <FontAwesomeIcon icon ={faUser} color="#4d4d4e" />
-            </NavLink>
-            <NavLink exact ='true' activeclassname ='active' className ='contact-link' to ='/contact'>
-                <FontAwesomeIcon icon ={faEnvelope} color="#4d4d4e" />
-            </NavLink>
-        </nav>
-        <ul>
-            <li>
-                <a 
-                target="_black" 
-                rel="nonreferrer" 
-                href="https://www.linkedin.com/in/nicodemus-bezuayeho-126964287"
-                >
-                    <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
-                </a>
-            </li>
-            <li>
-                <a 
-                target="_black" 
-                rel="nonreferrer" 
-                href="https://github.com/Nico-Bezu"
-                >
-                    <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
-                </a>
-            </li>
-        </ul>
-    </div>
-)
+    return (
+        <>
+            <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+                <FontAwesomeIcon icon={faBars} color="#ffffff" />
+            </button>
+            <div className={`nav-bar ${isOpen ? 'open' : ''}`}>
+                <Link className='logo' to='/'>
+                    <img src={Logo} alt='logo' />
+                </Link>
+                <nav>
+                    <NavLink exact="true" activeclassname="active" to="/">
+                        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+                    </NavLink>
+                    <NavLink exact='true' activeclassname='active' className='about-link' to='/about'>
+                        <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+                    </NavLink>
+                    <NavLink exact='true' activeclassname='active' className='contact-link' to='/contact'>
+                        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+                    </NavLink>
+                </nav>
+                <ul>
+                    <li>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/nicodemus-bezuayeho-126964287"
+                        >
+                            <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/Nico-Bezu"
+                        >
+                            <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </>
+    )
+}
 
 export default Sidebar

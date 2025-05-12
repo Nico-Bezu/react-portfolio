@@ -1,20 +1,47 @@
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+  background: rgba(24, 24, 24, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+
+  svg {
+    font-size: 20px;
+  }
+}
+
 .nav-bar {
   background: rgba(24, 24, 24, 0.8);
   backdrop-filter: blur(10px);
   width: 60px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 3;
   min-height: 500px;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) translateX(-100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
 
-  &:hover {
-    transform: perspective(1000px) translateX(0);
+  &.open {
+    transform: translateX(0);
     width: 150px;
 
     nav a:after {
