@@ -4,6 +4,7 @@ import './App.scss';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Experience from './components/Experience';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='contact' element={<Contact />} />
+          <Route path='experience' element={<Experience />} />
         </Route>
       </Routes>
     </>
