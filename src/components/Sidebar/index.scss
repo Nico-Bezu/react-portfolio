@@ -7,17 +7,38 @@
   top: 0;
   z-index: 3;
   min-height: 500px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: perspective(1000px) translateX(0);
+    width: 150px;
+
+    nav a:after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   .logo {
     display: block;
     padding: 8px 0;
+    transform-style: preserve-3d;
+    transform: translateZ(20px);
 
     img {
       display: block;
       margin: 8px auto;
       width: 24px;
       height: auto;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateZ(30px);
+      }
 
       &.sub-logo {
         width: 50px;
@@ -33,6 +54,7 @@
     top: 50%;
     margin-top: -120px;
     width: 100%;
+    transform-style: preserve-3d;
 
     a {
       font-size: 22px;
@@ -43,6 +65,7 @@
       position: relative;
       text-decoration: none;
       transition: all 0.3s ease;
+      transform-style: preserve-3d;
 
       i {
         transition: all 0.3s ease-out;
@@ -51,18 +74,21 @@
       svg {
         opacity: 0.7;
         transition: all 0.3s ease;
+        transform: translateZ(10px);
       }
 
       &:hover {
         color: #ffffff;
+        transform: translateZ(20px);
+        
         svg {
           opacity: 1;
-          transform: scale(1.1);
+          transform: translateZ(30px) scale(1.1);
         }
 
         &:after {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateX(0) translateZ(20px);
         }
       }
 
@@ -76,7 +102,7 @@
         width: 100%;
         text-align: center;
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateX(-20px) translateZ(0);
         transition: all 0.3s ease;
         color: #ffffff;
       }
@@ -104,6 +130,7 @@
       svg {
         color: #ffffff;
         opacity: 1;
+        transform: translateZ(30px);
       }
     }
   }
@@ -117,6 +144,7 @@
     list-style: none;
     text-align: center;
     margin: 0;
+    transform-style: preserve-3d;
 
     li {
       a {
@@ -126,20 +154,33 @@
         line-height: 16px;
         color: rgba(255, 255, 255, 0.7);
         transition: all 0.3s ease;
+        transform-style: preserve-3d;
 
         svg {
           color: rgba(255, 255, 255, 0.7);
           transition: all 0.3s ease;
+          transform: translateZ(10px);
         }
 
         &:hover {
           color: #ffffff;
+          transform: translateZ(20px);
+          
           svg {
             color: #ffffff;
-            transform: scale(1.1);
+            transform: translateZ(30px) scale(1.1);
           }
         }
       }
     }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateZ(20px);
+  }
+  50% {
+    transform: translateZ(30px);
   }
 }
