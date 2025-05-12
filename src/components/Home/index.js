@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import Logo from './Logo'  
 
 const Home = () => 
 {
@@ -55,7 +54,6 @@ const Home = () =>
                 </h2>
                 <Link to="/contact" className="flat-button">CONTACT ME</Link>
             </div>
-            <Logo />
             <div className="bg-animation">
                 {[...Array(50)].map((_, i) => (
                     <div key={i} className="light-particle" />
@@ -64,15 +62,5 @@ const Home = () =>
         </div>
     )
 }
-
-const TechStack = () => (
-    <div className="tech-stack">
-        <div className="scroll-container">
-            {['JavaScript', 'React', 'Node.js', 'Python', 'SQL', 'AWS'].map((tech, i) => (
-                <span key={i} className="tech-item">{tech}</span>
-            ))}
-        </div>
-    </div>
-)
 
 export default Home
